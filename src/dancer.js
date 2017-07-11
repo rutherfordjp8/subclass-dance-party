@@ -26,4 +26,13 @@ class Dancer {
 
     this.$node.css(styleSettings);
   }
+
+  destroy() {
+    this.$node.find('img').attr('src', 'https://media.giphy.com/media/11XU8sAwhvwjok/giphy.gif');
+    this.step = function() {};
+    setTimeout(()=>{
+      this.$node.remove();
+    }, 1000);
+    
+  }
 }

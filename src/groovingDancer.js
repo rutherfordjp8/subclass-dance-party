@@ -4,16 +4,15 @@ class GroovingDancer extends MovingDancer {
   }
   step () {
     super.step();
-    
     this.stepCount = this.stepCount === undefined ? 0 : this.stepCount;
     this.stepCount++;
 
-    if (this.stepCount % 5 === 4) {
+    if (this.stepCount % 3 === 2) {
       this.$node.removeClass('spin');
       this.$node.removeClass('wobble');
     }
 
-    if (this.stepCount % 5 === 0) {
+    if (this.stepCount % 3 === 0) {
       var random = Math.floor(Math.random() * 2);
       this.steps[random][1].call(this);
     }
