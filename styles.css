@@ -4,6 +4,7 @@ body, html{
 body{
   margin: 0px;
   background-image: url('./russian_flag.jpg');
+  background-size: cover;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
