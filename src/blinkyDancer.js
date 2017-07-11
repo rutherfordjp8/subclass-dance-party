@@ -9,4 +9,4 @@ class BlinkyDancer extends Dancer {
   }
 }
 
-var _BlinkyDancer = BlinkyDancer;
+window.BlinkyDancer = BlinkyDancer;

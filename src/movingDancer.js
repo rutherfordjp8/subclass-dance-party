@@ -1,5 +1,5 @@
-const IMAGE_HEIGHT = 300;
-const IMAGE_WIDTH = 200;
+window.IMAGE_HEIGHT = 300;
+window.IMAGE_WIDTH = 200;
 
 class MovingDancer extends Dancer {
 
@@ -65,4 +65,4 @@ class MovingDancer extends Dancer {
   }
 }
 
-var _MovingDancer = MovingDancer;
+window.MovingDancer = MovingDancer;
