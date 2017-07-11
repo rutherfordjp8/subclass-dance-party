@@ -1,5 +1,6 @@
 $(document).ready(function() {
   window.DUCK_HUNT_MODE = false;
+  window.duckHuntScore = 0;
   window.dancers = [];
   window.HEIGHT = $('body').height();
   window.WIDTH = $('body').width();
@@ -36,8 +37,10 @@ $(document).ready(function() {
   $('.duckHuntToggle').click(function() {
     if (window.DUCK_HUNT_MODE) {
       $(this).html('Activate Duck Hunt Mode');
+      $('#scoreContainer').hide();
     } else {
       $(this).html('Deactivate Duck Hunt Mode');
+      $('#scoreContainer').show();
     }
     window.DUCK_HUNT_MODE = !window.DUCK_HUNT_MODE;
   });
