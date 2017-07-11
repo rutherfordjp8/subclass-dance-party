@@ -3,7 +3,7 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background-image: url('./russian_flag.jpg');
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -21,7 +21,11 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
   position:absolute;
+  height: 300px;
+  width: 200px;
+}
+.dancer img{
+  height: 100%;
+  width: 100%;
 }

@@ -3,7 +3,7 @@ class Dancer {
 
   constructor(top, left, timeBetweenSteps) {
   // use jQuery to create an HTML <span> tag
-    this.$node = $('<span class="dancer"></span>');
+    this.$node = $('<div class="dancer"><img src="https://media.giphy.com/media/2d8X4EQIdsXQc/giphy.gif"></div>');
     this.timeBetweenSteps = timeBetweenSteps;
     this.step();
     this.setPosition(top, left);
