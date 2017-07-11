@@ -14,8 +14,11 @@ class Dancer {
   }
 
   setPosition(top, left) {
-    // Use css top and left properties to position our <span> tag
+    // Use css top and left propertises to position our <span> tag
     // where it belongs on the page. See http://api.jquery.com/css/
+    this.top = top;
+    this.left = left;
+
     var styleSettings = {
       top: top,
       left: left
@@ -23,4 +26,4 @@ class Dancer {
 
     this.$node.css(styleSettings);
   }
-};
+}
