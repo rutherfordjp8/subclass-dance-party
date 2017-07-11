@@ -7,6 +7,6 @@ class BlinkyDancer extends Dancer {
     super.step();
     this.$node.toggle();
   }
-};
+}
 
 var _BlinkyDancer = BlinkyDancer;
