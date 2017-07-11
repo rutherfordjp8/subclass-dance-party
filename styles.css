@@ -30,3 +30,38 @@ body, a:link, a:visited, a:active{
   height: 100%;
   width: 100%;
 }
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+.spin {
+    -webkit-animation:spin 0.6s ease;
+    -moz-animation:spin 0.6s ease;
+    animation:spin 0.6s ease;
+}
+
+@-moz-keyframes wobble {
+  30% { -moz-transform: rotate(50deg); } 
+  70% { -moz-transform: rotate(-50deg); } 
+  100% { -moz-transform: rotate(0deg); } 
+}
+
+@-webkit-keyframes wobble {
+  30% { -webkit-transform: rotate(50deg); } 
+  70% { -webkit-transform: rotate(-50deg); } 
+  100% { -webkit-transform: rotate(0deg); }
+}
+
+@keyframes wobble { 
+  30% { transform: rotate(50deg); } 
+  70% { transform: rotate(-50deg); } 
+  100% { transform: rotate(0deg); }
+}
+
+.wobble {
+    -webkit-animation:wobble 0.6s ease;
+    -moz-animation:wobble 0.6s ease;
+    animation:wobble 0.6s ease;
+}
+
