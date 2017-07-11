@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  window.DUCK_HUNT_MODE = false;
   window.dancers = [];
   window.HEIGHT = $('body').height();
   window.WIDTH = $('body').width();
@@ -32,8 +33,20 @@ $(document).ready(function() {
     window.dancers.push(dancer);
   });
 
+  $('.duckHuntToggle').click(function() {
+    if (window.DUCK_HUNT_MODE) {
+      $(this).html('Activate Duck Hunt Mode');
+    } else {
+      $(this).html('Deactivate Duck Hunt Mode');
+    }
+    window.DUCK_HUNT_MODE = !window.DUCK_HUNT_MODE;
+  });
+
   $(window).resize(function() {
     window.HEIGHT = $('body').height();
     window.WIDTH = $('body').width();
   });
+  
+  window.DUCK_HUNT_DOG = $('.duck-hunt-dog');
+  $(window.DUCK_HUNT_DOG).css('top', window.HEIGHT);
 });

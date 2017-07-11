@@ -29,6 +29,7 @@ body, a:link, a:visited, a:active{
 .dancer img{
   height: 100%;
   width: 100%;
+  cursor: crosshair;
 }
 
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
@@ -63,5 +64,11 @@ body, a:link, a:visited, a:active{
     -webkit-animation:wobble 0.6s ease;
     -moz-animation:wobble 0.6s ease;
     animation:wobble 0.6s ease;
+}
+
+img.duck-hunt-dog {
+  position: absolute;
+  height: 150px;
+  width: 120px;
 }
 
