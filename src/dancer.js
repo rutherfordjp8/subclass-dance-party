@@ -47,9 +47,9 @@ class Dancer {
       DUCK_HUNT_DOG.css('left', this.left);
       this.$node.animate({top: '+=2000'}, 1000, 'linear');
       setTimeout(function() {
-        DUCK_HUNT_DOG.animate({top: "-=150"}, 500, function(){
+        DUCK_HUNT_DOG.animate({top: '-=150'}, 500, function() {
           setTimeout(function() {
-            DUCK_HUNT_DOG.animate({top: "+=150"}, 500);
+            DUCK_HUNT_DOG.animate({top: '+=150'}, 500);
           }, 500);
         });
       }, 1000);
