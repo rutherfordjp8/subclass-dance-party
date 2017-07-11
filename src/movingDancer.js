@@ -7,8 +7,8 @@ class MovingDancer extends Dancer {
     super(top, left, timeBetweenSteps);
     this.xDirection = Math.random() > 0.5 ? 'left' : 'right';
     this.yDirection = Math.random() > 0.5 ? 'down' : 'up';
-    this.downSpeed = 50 + Math.random() * 50;
-    this.leftSpeed = 50 + Math.random() * 50;
+    this.downSpeed = 20 + Math.random() * 20;
+    this.leftSpeed = 20 + Math.random() * 20;
   }
 
   step () {
@@ -59,8 +59,8 @@ class MovingDancer extends Dancer {
 
     this.$node.animate(
       {left: animationLeftValue, top: animationTopValue},
-      {easing: 'linear'},
-      this.timeBetweenSteps
+      this.timeBetweenSteps - 10,
+      'linear'
     );
   }
 }
