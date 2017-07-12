@@ -18,17 +18,20 @@ class PowerDancer extends MovingDancer {
     super.step();
     this.$node.removeClass('spin');
     var doFlip = false;
-    var survivors = [];
+    
+    var toDestroy = [];
+
     for (var i = 0; i < window.dancers.length; i++) {
       var dancer = window.dancers[i];
       if ( areTouching(dancer, this) ) {
-        dancer.destroy();
+        toDestroy.push(dancer);
         doFlip = true;
-      } else {
-        survivors.push(dancer);
       }
     }
-    window.dancers = survivors;
+
+    toDestroy.forEach(function(dancer) {
+      dancer.destroy();
+    });
 
     if (doFlip) {
       this.$node.addClass('spin');

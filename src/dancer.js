@@ -32,15 +32,24 @@ class Dancer {
     this.$node.css(styleSettings);
   }
 
+  remove() {
+    var survivors = [];
+    window.dancers.forEach((dancer) => {
+      if (!(this === dancer)) {
+        survivors.push(dancer);
+      }
+    });
+    window.dancers = survivors;
+    this.$node.remove();
+  }
+
   destroy() {
     this.$node.find('img').attr('src', 'https://media.giphy.com/media/11XU8sAwhvwjok/giphy.gif');
     this.step = function() {};
 
-    setTimeout(()=>{
-      this.$node.remove();
-    }, 1000);    
+    setTimeout(this.remove.bind(this), 1000);    
   }
-
+  
   fall() {
     if (window.DUCK_HUNT_MODE) {
       this.$node.find('img').attr('src', 'https://media.giphy.com/media/WMa8VdnqeLdL2/giphy.gif');
@@ -48,7 +57,8 @@ class Dancer {
 
       DUCK_HUNT_DOG.css('left', this.left);
 
-      this.$node.animate({top: '+=2000'}, 1000, 'linear');
+      this.$node.animate({top: '+=2000'}, 1000, 'linear', this.remove.bind(this));
+
       setTimeout(function() {
 
         DUCK_HUNT_DOG.animate({top: '-=150'}, 500, function() {
