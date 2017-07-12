@@ -35,6 +35,7 @@ class Dancer {
   destroy() {
     this.$node.find('img').attr('src', 'https://media.giphy.com/media/11XU8sAwhvwjok/giphy.gif');
     this.step = function() {};
+
     setTimeout(()=>{
       this.$node.remove();
     }, 1000);    
@@ -42,17 +43,23 @@ class Dancer {
 
   fall() {
     if (window.DUCK_HUNT_MODE) {
-      this.$node.find('img').attr('src', 'https://media.giphy.com/media/WMa8VdnqeLdL2/giphy.gif'); 
+      this.$node.find('img').attr('src', 'https://media.giphy.com/media/WMa8VdnqeLdL2/giphy.gif');
       this.step = function() {};
+
       DUCK_HUNT_DOG.css('left', this.left);
+
       this.$node.animate({top: '+=2000'}, 1000, 'linear');
       setTimeout(function() {
+
         DUCK_HUNT_DOG.animate({top: '-=150'}, 500, function() {
           setTimeout(function() {
+
             DUCK_HUNT_DOG.animate({top: '+=150'}, 500);
           }, 500);
         });
+
       }, 1000);
+
       duckHuntScore++;
       $('#score').html(duckHuntScore);
     }
